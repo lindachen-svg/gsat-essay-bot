@@ -2,7 +2,7 @@
 
 依照大考中心國寫評分原則，幫高中生批改學測國文作文的靜態網站。
 
-🔗 **網站**：https://redpenwriting.github.io/gsat-essay-bot/
+🔗 **網站**：https://lindachen-svg.github.io/gsat-essay-bot/
 
 ## 功能
 

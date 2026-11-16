@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>r01〈AI 寫作業〉示範習作批改｜紅筆小改</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">改</span>紅筆小改</a>
+    <nav class="nav">
+      <a href="../index.html">首頁</a>
+      <a href="../grader.html">批改機器人</a>
+      <a href="../rubric.html">評分標準</a>
+      <a href="../index.html#prompts">題庫</a>
+      <a href="../index.html#reports" class="active">批改紀錄</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- ① 報告標頭 -->
+  <section class="hero" style="padding-bottom:0">
+    <span class="tag tag-zhixing">知性題 · r01</span> <span class="tag tag-demo">示範習作</span>
+    <h1 style="margin-top:10px">〈AI 寫作業〉示範習作批改</h1>
+    <p class="muted">對應題目：<a href="../prompts/p01-ai-homework.html">p01 AI 寫作業，算不算作弊？</a>　·　批改日期：2026-11-16</p>
+  </section>
+
+  <!-- ② 等級與分數 -->
+  <div class="score-head">
+    <span class="grade-badge lg">A</span>
+    <div>
+      <div class="score">20<small> / 25</small></div>
+      <div class="muted">問題（一）A 級 4／4 分　·　問題（二）A 級 16／21 分</div>
+    </div>
+    <div style="flex:1;min-width:240px">
+      <strong>一句話總評：</strong>數據判讀精準，立場清楚而且有創意；可惜論證只有一層，也沒有回應反方，所以停在 A，上不了 A+。
+    </div>
+  </div>
+
+  <!-- ③ 學生原文 -->
+  <h2>原文</h2>
+  <div class="manuscript">
+    <p class="sub-label">問題（一）</p>
+    <p>表格顯示，讓AI直接產出答案的學生最多，佔46%，但只有21%認為對學習有幫助，段考平均還退步3.2分；請AI解釋觀念的學生佔38%，卻有79%認為有幫助，平均進步5.6分。<mark class="good">可見最多人使用的方式，反而學習效果最差。</mark></p>
+    <p class="sub-label">問題（二）</p>
+    <p>我認為學校不該全面禁止，也不該完全開放，而應該<mark class="good">依照「使用方式」來規範</mark>。從調查可知，同樣是使用AI，請它解釋觀念的人進步了，直接抄答案的人卻退步，可見問題不在AI本身，而在於怎麼用。</p>
+    <p>首先，學校可以要求學生在作業後附上「AI使用紀錄」，寫出自己問了什麼、AI回答了什麼，以及自己修改了哪些地方。這樣一來，老師能看見學生的思考過程，學生也會因為要交代過程，而不敢直接抄寫。</p>
+    <p>其次，老師應該調整作業的設計。<mark class="fix">既使</mark>老師禁止，學生回家仍然能使用。如果作業只是背誦或套公式，AI當然能輕易完成；但如果作業要求學生結合自己的生活經驗或課堂討論，AI就只能當輔助，無法代替學生思考。</p>
+    <p><mark class="fix">總而言之</mark>，AI就像計算機，禁止它並不能讓學生變得更會思考。與其把它擋在校門外，不如教會學生正確的使用方法，讓AI成為學習的幫手，而不是作弊的工具。</p>
+  </div>
+  <p class="muted" style="font-size:14px">※ 本文為本站自撰之示範習作，非真實考生作品。<mark class="good">綠色</mark>＝亮點，<mark class="fix">紅色</mark>＝待改。</p>
+
+  <!-- ④ 四面向評語 -->
+  <h2>四面向評語</h2>
+  <div class="table-scroll">
+  <table class="rubric">
+    <tr><th>面向</th><th>評語</th></tr>
+    <tr><td>① 題旨掌握</td><td>問題（一）完整引用兩組數字，並點出「用得最多、效果最差」的反差，判讀到位。問題（二）主張「依使用方式規範」，正好扣住表格的意涵。</td></tr>
+    <tr><td>② 內容深度</td><td>兩個做法（使用紀錄、改作業設計）都具體可行；但只說「怎麼做」，沒有說明「為什麼這樣做比禁止好」，也沒有回應「學生會造假紀錄」等反方疑慮。</td></tr>
+    <tr><td>③ 結構組織</td><td>主張 → 首先 → 其次 → 結論，結構完整清楚。第三段中「既使老師禁止……」一句放錯位置，打斷了段落主旨。</td></tr>
+    <tr><td>④ 文辭表達</td><td>文句通順。「AI 就像計算機」的比喻不錯，可惜只出現在結尾、沒有展開；「總而言之」較為制式。</td></tr>
+  </table>
+  </div>
+
+  <!-- ⑤ 逐段批註 -->
+  <h2>逐段批註</h2>
+  <div class="notes">
+    <div class="note"><div class="pno">一-1</div><div>
+      <p class="ok">✓ 數字完整、對照清楚，最後一句收得很漂亮，判讀題拿滿分。</p>
+      <p class="fix">✎ 可以再精簡：不需要寫出全部四個數字，挑最有反差的兩組即可，省下的字數留給第二小題。</p>
+    </div></div>
+    <div class="note"><div class="pno">二-1</div><div>
+      <p class="ok">✓ 跳出「禁止／開放」二選一，提出第三條路，這是本篇最大的亮點。</p>
+      <p class="fix">✎「可見問題不在AI本身」是好論點，但只用一句帶過，可以補一句說明：「工具沒有好壞，差別在學生是把思考交給它，還是用它來思考。」</p>
+    </div></div>
+    <div class="note"><div class="pno">二-2</div><div>
+      <p class="ok">✓「AI使用紀錄」的做法具體，老師和學生的好處都有寫到。</p>
+      <p class="fix">✎ 少了反方回應：讀者會想「學生會不會亂寫紀錄？」先替讀者提出疑問再回答，論證才會有第二層。</p>
+    </div></div>
+    <div class="note"><div class="pno">二-3</div><div>
+      <p class="ok">✓ 從「作業設計」切入，是很少人想到的角度。</p>
+      <p class="fix">✎「既使老師禁止，學生回家仍然能使用」其實是在反駁「全面禁止」，應該移到第一段；放在這裡會讓段落主旨不清。</p>
+    </div></div>
+    <div class="note"><div class="pno">二-4</div><div>
+      <p class="ok">✓「計算機」的比喻很貼切，讀者一看就懂。</p>
+      <p class="fix">✎ 比喻放在結尾才出現太可惜，可以在開頭就埋下，結尾再呼應，形成首尾呼應。</p>
+    </div></div>
+  </div>
+
+  <!-- ⑥ 錯別字與標點 -->
+  <h2>錯別字與標點</h2>
+  <div class="table-scroll">
+  <table class="rubric">
+    <tr><th>位置</th><th>原文</th><th>修正</th></tr>
+    <tr><td>二-3</td><td>既使</td><td>即使</td></tr>
+    <tr><td>標點</td><td>無</td><td>標點使用正確；數字與英文用半形可接受</td></tr>
+  </table>
+  </div>
+
+  <!-- ⑦ 升級三件事 -->
+  <h2>升到 A+，還差這三件事</h2>
+  <ol>
+    <li><strong>補一層反方回應</strong>：寫出「有人擔心……，但……」，讓論證從一層變兩層。</li>
+    <li><strong>把比喻往前放</strong>：開頭就用「計算機」立論，結尾再呼應，結構會更嚴謹。</li>
+    <li><strong>每段只講一件事</strong>：把錯位的句子移回該去的段落。</li>
+  </ol>
+
+  <!-- ⑧ 示範改寫 -->
+  <h2>示範改寫（問題二第 2 段）</h2>
+  <div class="rewrite">
+    <div class="before"><span class="label">改寫前</span>首先，學校可以要求學生在作業後附上「AI使用紀錄」，寫出自己問了什麼、AI回答了什麼，以及自己修改了哪些地方。這樣一來，老師能看見學生的思考過程，學生也會因為要交代過程，而不敢直接抄寫。</div>
+    <div class="after"><span class="label">改寫後</span>首先，學校可以要求作業附上「AI使用紀錄」，寫明提問、AI的回答與自己的修改。或許有人擔心學生會隨意編造紀錄，但紀錄的價值本來就不在於監督，而在於逼學生回頭檢視：哪些是我想的，哪些是AI想的？能說清楚這條界線的學生，自然不會把思考整個交出去。</div>
+  </div>
+
+  <div class="hero-actions" style="margin-top:36px">
+    <a class="btn" href="../grader.html">✍️ 換我也來寫一篇</a>
+    <a class="btn ghost" href="../index.html#reports">← 回批改紀錄</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">紅筆小改｜批改依據：<a href="../rubric.html">本站評分標準</a> · 示範習作為本站自撰</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<!--
+  題目頁模板 prompt-template.html
+  使用方式：複製到 prompts/pNN-英文短名.html，把所有 {{ }} 換掉，刪除不需要的註解。
+  規則見 CLAUDE.md 第 5-A 節。不得新增 <style>，只能用 assets/style.css 的元件。
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{pNN}} {{題目名稱}}｜紅筆小改</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-base="../" data-prompt="{{pNN}}">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">改</span>紅筆小改</a>
+    <nav class="nav">
+      <a href="../index.html">首頁</a>
+      <a href="../grader.html">批改機器人</a>
+      <a href="../rubric.html">評分標準</a>
+      <a href="../index.html#prompts" class="active">題庫</a>
+      <a href="../index.html#reports">批改紀錄</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" style="padding-bottom:0">
+    <!-- 知性題用 tag-zhixing，情意題用 tag-qingyi -->
+    <span class="tag tag-{{zhixing|qingyi}}">{{知性|情意}}題 · {{pNN}}</span>
+    <h1 style="margin-top:10px">{{題目名稱}}</h1>
+    <p class="lead">滿分 25 分{{知性題補：問題（一）4 分、問題（二）21 分}}。建議作答時間 45 分鐘。</p>
+  </section>
+
+  <!-- 知性題叫「閱讀材料」（可含表格），情意題叫「引導文字」 -->
+  <h2>{{閱讀材料|引導文字}}</h2>
+  <div class="prompt-box {{zhixing|qingyi}}">
+    <p>{{引文：120–300 字，必須本站自撰；使用數據時註明「練習用的虛構數據」}}</p>
+  </div>
+
+  <h2>{{問題|題目}}</h2>
+  <!-- 知性題：兩個 .question（4 分 + 21 分）；情意題：一個 .question（25 分） -->
+  <div class="question">
+    <strong>問題（一）</strong>{{判讀題，文長 100 字以內}}<span class="pts">（4 分）</span>
+  </div>
+  <div class="question">
+    <strong>問題（二）</strong>{{論述題，文長 400 字以內}}<span class="pts">（21 分）</span>
+  </div>
+
+  <h2>紅筆小改的審題提醒</h2>
+  <ul>
+    <!-- 剛好 3 點，每點「粗體關鍵字：一句說明」 -->
+    <li><strong>{{關鍵字}}</strong>：{{提醒}}</li>
+    <li><strong>{{關鍵字}}</strong>：{{提醒}}</li>
+    <li><strong>{{關鍵字}}</strong>：{{提醒}}</li>
+  </ul>
+
+  <div class="hero-actions">
+    <a class="btn" href="../grader.html">✍️ 寫好了，去批改</a>
+    <a class="btn ghost" href="../rubric.html">看評分標準</a>
+  </div>
+
+  <h2>這題的批改紀錄</h2>
+  <!-- 不要手寫卡片，main.js 會依 data-prompt 自動列出 -->
+  <div class="card-grid" id="related-reports"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">紅筆小改｜題目為本站自撰之仿學測練習題 · <a href="../index.html">回首頁</a></div>
+</footer>
+
+<script src="../assets/catalog.js"></script>
+<script src="../assets/main.js"></script>
+</body>
+</html>

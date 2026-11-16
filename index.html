@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>紅筆小改｜學測國寫批改機器人</title>
+  <meta name="description" content="依照大考中心國寫評分原則，幫你批改學測國文作文的機器人與批改紀錄庫。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="logo-mark">改</span>紅筆小改</a>
+    <nav class="nav">
+      <a href="index.html" class="active">首頁</a>
+      <a href="grader.html">批改機器人</a>
+      <a href="rubric.html">評分標準</a>
+      <a href="index.html#prompts">題庫</a>
+      <a href="index.html#reports">批改紀錄</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">學測國語文寫作能力測驗 · 批改機器人</div>
+    <h1>寫完作文，<br>先給<span class="underline">紅筆小改</span>改一遍。</h1>
+    <p class="lead">依照大考中心公布的國寫評分原則，用同一套標準幫你打等級、逐段批註、指出錯字，最後告訴你「要升一級，還差哪三件事」。</p>
+    <div class="hero-actions">
+      <a class="btn" href="grader.html">✍️ 開始批改我的作文</a>
+      <a class="btn ghost" href="rubric.html">先看評分標準</a>
+    </div>
+    <p class="muted" style="margin-top:18px;font-size:14px" id="content-count"></p>
+  </section>
+
+  <section>
+    <h2>三步驟，讓作文升一級</h2>
+    <div class="steps">
+      <div class="step"><b>1</b>到<strong>題庫</strong>挑一道仿學測題目，限時寫完。</div>
+      <div class="step"><b>2</b>貼進<strong>批改機器人</strong>，先看字數、贅詞、錯字健檢。</div>
+      <div class="step"><b>3</b>一鍵產生<strong>批改指令</strong>，交給任一 AI，得到格式統一的批改報告。</div>
+    </div>
+  </section>
+
+  <section id="prompts">
+    <h2>📝 題庫</h2>
+    <p class="muted">仿學測題型自擬的練習題，分為「知性統整」與「情意感受」兩類。</p>
+    <div class="card-grid" id="prompt-list"></div>
+  </section>
+
+  <section id="reports">
+    <h2>🔴 批改紀錄</h2>
+    <p class="muted">每一篇都用同一份格式批改：等級、分項評語、逐段批註、錯字標點、升級建議、示範改寫。</p>
+    <div class="card-grid" id="report-list"></div>
+  </section>
+
+  <section>
+    <h2>這個網站怎麼長大？</h2>
+    <div class="callout green">
+      本專案的所有規則都寫在 <code>CLAUDE.md</code>（另附 <code>AGENTS.md</code> 給其他 AI 工具）。
+      只要對 AI 說「<strong>幫我新增一道情意題</strong>」或「<strong>把這篇作文批改成報告</strong>」，
+      AI 讀完規則就會複製 <code>templates/</code> 裡的模板、照評分標準批改、依命名規則存檔，並自動登記到首頁。
+      網站會一篇一篇長大，但風格與批改標準永遠一致。
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    紅筆小改｜學測國寫批改機器人 · 國立政治大學 廣告學系 陳采妏<br>
+    評分標準整理自大考中心歷年公布之國寫閱卷評分原則；題目與示範習作為本站自撰，僅供練習。
+  </div>
+</footer>
+
+<script src="assets/catalog.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>

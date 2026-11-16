@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<!--
+  批改報告模板 report-template.html
+  使用方式：複製到 reports/rNN-pNN-英文短名.html，把所有 {{ }} 換掉。
+  必須保留 ①–⑧ 八個區塊且順序不變。規則見 CLAUDE.md 第 5-B 節與第 7 節。
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{rNN}}〈{{題目名稱}}〉{{作者或「示範習作」}}批改｜紅筆小改</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">改</span>紅筆小改</a>
+    <nav class="nav">
+      <a href="../index.html">首頁</a>
+      <a href="../grader.html">批改機器人</a>
+      <a href="../rubric.html">評分標準</a>
+      <a href="../index.html#prompts">題庫</a>
+      <a href="../index.html#reports" class="active">批改紀錄</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- ① 報告標頭 -->
+  <section class="hero" style="padding-bottom:0">
+    <span class="tag tag-{{zhixing|qingyi}}">{{知性|情意}}題 · {{rNN}}</span> <span class="tag tag-demo">{{示範習作|學生投稿}}</span>
+    <h1 style="margin-top:10px">〈{{題目名稱}}〉{{示範習作|作者暱稱}}批改</h1>
+    <p class="muted">對應題目：<a href="../prompts/{{pNN-檔名}}.html">{{pNN}} {{題目名稱}}</a>　·　批改日期：{{YYYY-MM-DD}}</p>
+  </section>
+
+  <!-- ② 等級與分數：等級章 + 分數 + 一句話總評（必須說明為什麼不是上一級） -->
+  <div class="score-head">
+    <span class="grade-badge lg">{{等級}}</span>
+    <div>
+      <div class="score">{{總分}}<small> / 25</small></div>
+      <div class="muted">{{知性題：問題（一）X 級 n／4 分 · 問題（二）X 級 n／21 分｜情意題：X 級（區間）位置}}</div>
+    </div>
+    <div style="flex:1;min-width:240px">
+      <strong>一句話總評：</strong>{{優點，但缺點，所以停在 X}}
+    </div>
+  </div>
+
+  <!-- ③ 原文：一段一個 <p>，不得改動學生文字；亮點用 mark.good，問題用 mark.fix -->
+  <h2>原文</h2>
+  <div class="manuscript">
+    <!-- 知性題用 <p class="sub-label">問題（一）</p> 分隔小題 -->
+    <p>{{第一段原文}}</p>
+    <p>{{第二段原文}}</p>
+  </div>
+  <p class="muted" style="font-size:14px">※ {{來源說明}}。<mark class="good">綠色</mark>＝亮點，<mark class="fix">紅色</mark>＝待改。</p>
+
+  <!-- ④ 四面向評語：固定四列，順序不可變 -->
+  <h2>四面向評語</h2>
+  <div class="table-scroll">
+  <table class="rubric">
+    <tr><th>面向</th><th>評語</th></tr>
+    <tr><td>① 題旨掌握</td><td>{{評語，需引用原文}}</td></tr>
+    <tr><td>② 內容深度</td><td>{{評語}}</td></tr>
+    <tr><td>③ 結構組織</td><td>{{評語}}</td></tr>
+    <tr><td>④ 文辭表達</td><td>{{評語}}</td></tr>
+  </table>
+  </div>
+
+  <!-- ⑤ 逐段批註：每段一個 .note，先 ✓ 再 ✎；知性題段號寫「一-1、二-1」 -->
+  <h2>逐段批註</h2>
+  <div class="notes">
+    <div class="note"><div class="pno">第 1 段</div><div>
+      <p class="ok">✓ {{優點}}</p>
+      <p class="fix">✎ {{待改與具體建議}}</p>
+    </div></div>
+  </div>
+
+  <!-- ⑥ 錯別字與標點：沒有也要寫「無」 -->
+  <h2>錯別字與標點</h2>
+  <div class="table-scroll">
+  <table class="rubric">
+    <tr><th>位置</th><th>原文</th><th>修正</th></tr>
+    <tr><td>{{第 N 段}}</td><td>{{錯字}}</td><td>{{正字}}</td></tr>
+  </table>
+  </div>
+
+  <!-- ⑦ 升級三件事：剛好三點，標題寫「升到 {{下一級}}，還差這三件事」；A+ 改為「保持 A+ 的三個關鍵」 -->
+  <h2>升到 {{下一級}}，還差這三件事</h2>
+  <ol>
+    <li><strong>{{動作}}</strong>：{{說明}}</li>
+    <li><strong>{{動作}}</strong>：{{說明}}</li>
+    <li><strong>{{動作}}</strong>：{{說明}}</li>
+  </ol>
+
+  <!-- ⑧ 示範改寫：只改一段或半段 -->
+  <h2>示範改寫（{{第 N 段}}）</h2>
+  <div class="rewrite">
+    <div class="before"><span class="label">改寫前</span>{{原文}}</div>
+    <div class="after"><span class="label">改寫後</span>{{改寫}}</div>
+  </div>
+
+  <div class="hero-actions" style="margin-top:36px">
+    <a class="btn" href="../grader.html">✍️ 換我也來寫一篇</a>
+    <a class="btn ghost" href="../index.html#reports">← 回批改紀錄</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">紅筆小改｜批改依據：<a href="../rubric.html">本站評分標準</a> · {{來源說明}}</div>
+</footer>
+</body>
+</html>

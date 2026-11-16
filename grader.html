@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>批改機器人｜紅筆小改</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="logo-mark">改</span>紅筆小改</a>
+    <nav class="nav">
+      <a href="index.html">首頁</a>
+      <a href="grader.html" class="active">批改機器人</a>
+      <a href="rubric.html">評分標準</a>
+      <a href="index.html#prompts">題庫</a>
+      <a href="index.html#reports">批改紀錄</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" style="padding-bottom:0">
+    <div class="eyebrow">GRADER · 兩段式批改</div>
+    <h1>批改機器人</h1>
+    <p class="lead">第一段：紅筆小改在你的瀏覽器裡<strong>即時健檢</strong>（字數、段落、贅詞、常見錯字、半形標點）。第二段：一鍵產生<strong>批改指令</strong>，貼給 Claude、ChatGPT 或 Gemini，拿到格式統一的批改報告。</p>
+  </section>
+
+  <h2>① 選題目、貼作文</h2>
+  <div class="field">
+    <label for="prompt-select">題目</label>
+    <select id="prompt-select"></select>
+  </div>
+  <div class="field" id="custom-wrap" style="display:none">
+    <label for="custom-prompt">自訂題目（請貼上完整題目與要求）</label>
+    <input type="text" id="custom-prompt" placeholder="例：以「轉角」為題，寫一篇文章，敘寫你的經驗與感受。">
+  </div>
+  <div class="field">
+    <label for="essay">你的作文（段落之間空一行或換行即可）</label>
+    <textarea id="essay" placeholder="把作文貼在這裡……"></textarea>
+  </div>
+
+  <h2>② 即時健檢</h2>
+  <div class="stats">
+    <div class="stat"><div class="n" id="s-chars">0</div><div class="k">字數（含標點）</div></div>
+    <div class="stat"><div class="n" id="s-han">0</div><div class="k">國字數</div></div>
+    <div class="stat"><div class="n" id="s-paras">0</div><div class="k">段落數</div></div>
+    <div class="stat"><div class="n" id="s-sent">0</div><div class="k">句數</div></div>
+    <div class="stat"><div class="n" id="s-long">0</div><div class="k">最長句字數</div></div>
+  </div>
+  <ul class="flags" id="flags"><li class="ok">貼上作文後，這裡會出現健檢結果。</li></ul>
+
+  <h2>③ 產生批改指令</h2>
+  <p class="muted">指令裡已經放好本站的評分標準與報告格式，AI 會照同一套規則批改。</p>
+  <div class="hero-actions" style="margin-top:0">
+    <button class="btn" id="build">🔴 產生批改指令</button>
+    <button class="btn ghost" id="copy" disabled>複製指令</button>
+  </div>
+  <p id="copy-msg" class="muted" style="font-size:14px"></p>
+  <div class="output-box" id="output" style="display:none"></div>
+
+  <div class="callout green">
+    <strong>想把批改結果收進網站？</strong>把 AI 回覆的報告交給讀過 <code>CLAUDE.md</code> 的 AI，說「把這份批改做成報告頁」，它會用 <code>templates/report-template.html</code> 產生新頁面並登記到首頁。
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">紅筆小改｜學測國寫批改機器人 · 健檢在你的瀏覽器內完成，作文不會被上傳。</div>
+</footer>
+
+<script src="assets/catalog.js"></script>
+<script src="assets/grader.js"></script>
+</body>
+</html>
